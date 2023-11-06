@@ -1,9 +1,23 @@
 ---
-
+import { links } from "../data/constants";
 ---
 
 <footer class="py-8">
   <div class="text-white">footer</div>
+
+  <p>Links</p>
+  <ul>
+    {
+      links.map((link) => (
+        <li>
+          <p>{link.name}</p>
+          <a href={link.url}>
+            <img src={link.icon} alt=`${link.name} icon` class="w-10 h-10"/>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
 </footer>
 
 <style>

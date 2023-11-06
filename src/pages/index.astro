@@ -1,71 +1,103 @@
 ---
+import { skills, projects } from "../data/constants";
+
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
 ---
 
 <Layout>
   <main>
-    <h1>Welcome to my <span class="text-gradient">Portfolio</span></h1>
-    <div class="">potato</div>
+    <h1>
+      Hi, I'm <span>Tony</span>.
+    </h1>
 
-    <div>
-      <h2>About</h2>
-      <div>Image</div>
-      <p>
-        Hi, I'm <span>Tony</span>. A developer based in Toronto, Canada. I love
-        building mobile web applications with modern technologies.
-      </p>
-    </div>
-
-    <!-- skills section -->
-    <div>
-      <h2>Skills</h2>
-      <div class="flex flex-row">
-        <div>
-          <h3>Web</h3>
-          <ul class="flex-col">
-            <li><p>TypeScript</p></li>
-            <li><p>React</p></li>
-            <li><p>Svelte</p></li>
-            <li><p>Tailwind</p></li>
-          </ul>
+    <!-- about section -->
+    <div class="py-10">
+      <h2 id="about" class="py-4">About</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        <div class="self-center place-self-center">
+          <img
+            src="/public/profile_image.png"
+            alt="profile image"
+            class="p-8 rounded-full"
+          />
         </div>
-
-        <div>
-          <h3>Systems</h3>
-          <ul>
-            <li><p>Node</p></li>
-            <li><p>SQL</p></li>
-            <li><p>C++</p></li>
-            <li><p>C#</p></li>
-          </ul>
-        </div>
-
-        <div>
-          <h3>Data</h3>
-          <ul>
-            <li><p>Python</p></li>
-            <li><p>TensorFlow</p></li>
-            <li><p>Pandas</p></li>
-            <li><p>Jupyter</p></li>
-          </ul>
+        <div class="text-center self-center p-8">
+          <p>
+            Welcome to my developer portfolio website, where technology, design,
+            and the magic of machine learning converge.<br /><br />
+          </p>
+          <p>
+            As a passionate developer, I've embarked on a multifaceted journey
+            that spans web development, user-centered design, and the
+            fascinating world of machine learning.<br /><br />
+          </p>
+          <p>
+            You'll discover an array of projects that showcase my skills, from
+            responsive websites to intelligent applications driven by AI and ML.
+          </p>
         </div>
       </div>
     </div>
 
-    <!-- grid layout for projects -->
-    <div>
-      <h2>Projects</h2>
-      <ul>
-        <li><p>Music Visualizer</p></li>
-        <li><p>DJ Mixer</p></li>
-        <li><p>Tech News</p></li>
-        <li><p>Supercharger App</p></li>
-        <li><p>Dino Game</p></li>
-        <li><p>Doted</p></li>
-        <li><p>Blogger?</p></li>
-        <li><p>Jupyter Notebooks</p></li>
-      </ul>
+    <!-- skills section -->
+    <div class="py-10">
+      <h2 id="skills" class="py-4">Skills</h2>
+      <div class="flex flex-row justify-around">
+        {
+          skills.map((category) => (
+            <div class="flex flex-col">
+              <h3>{category.name}</h3>
+              <ul class="flex flex-col gap-5">
+                {category.items.map((item) => (
+                  <li>
+                    <img
+                      src={item.icon}
+                      alt={`${item.name} icon`}
+                      class="w-20 h-20"
+                    />
+                    <p class="text-center">{item.name}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- projects section -->
+    <div class="py-10">
+      <h2 id="projects" class="py-4">Projects</h2>
+      <div>
+        <ul class="projects-grid">
+          {
+            projects.map((project) => (
+              <li>
+                // name
+                <p>{project.name}</p>
+                // image
+                <a
+                  href={project.url}
+                  class="flex justify-center max-h-72 sm:max-h-60 bg-black">
+                  <img
+                    src={project.image}
+                    alt={project.desc}
+                    class="object-cover object-top sm:h-60 min-w-60"
+                  />
+                </a>
+                // tags
+                <div>
+                  <p class="flex flex-row justify-center items-center gap-2 text-xs">
+                    {project.tags.map((tag) => (
+                      <span>{tag}</span>
+                    ))}
+                  </p>
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
     </div>
   </main>
 </Layout>
@@ -73,11 +105,21 @@ import Card from "../components/Card.astro";
 <style>
   h1,
   h2,
-  h3 {
+  h3,
+  span {
     color: aqua;
   }
   p {
     color: white;
+  }
+
+  .projects-grid {
+    display: grid;
+    align-items: center;
+    /* auto create columns with defined minmax values */
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 3rem;
+    text-align: center;
   }
 </style>
 
