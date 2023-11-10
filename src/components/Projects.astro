@@ -1,0 +1,50 @@
+---
+import { Image } from "astro:assets";
+
+import { projects } from "../data/constants";
+---
+
+<div>
+  <h2 id="projects" class="py-4">Projects</h2>
+  <div>
+    <ul class="projects-grid">
+      {
+        projects.map((project) => (
+          <li>
+            <p>{project.name}</p>
+            <a
+              href={project.url}
+              class="flex justify-center max-h-96 sm:max-h-72 bg-black">
+              <Image
+                src={project.image}
+                alt={project.desc}
+                width="640"
+                height="360"
+                loading="lazy"
+                class="object-cover object-top aspect-square"
+              />
+            </a>
+            <div>
+              <p class="flex flex-row justify-center items-center gap-2 text-xs">
+                {project.tags.map((tag) => (
+                  <span>{tag}</span>
+                ))}
+              </p>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
+
+<style>
+  .projects-grid {
+    display: grid;
+    align-items: center;
+    /* auto create columns with defined minmax values */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 3rem;
+    text-align: center;
+  }
+</style>

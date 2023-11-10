@@ -1,0 +1,36 @@
+---
+import { Image } from "astro:assets";
+---
+
+<div>
+  <h2 id="about" class="py-4">About</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2">
+    <div class="self-center place-self-center">
+      <Image
+        src="/profile_image.png"
+        alt="profile image"
+        width="320"
+        height="320"
+        class="rounded-full sm:pr-8"
+      />
+    </div>
+    <div class="text-left self-center py-8">
+      <h1>
+        Hi, I'm <span>Tony</span>.
+      </h1>
+      <p>
+        Welcome to my website, where technology, design, and the magic of
+        machine learning converge.<br /><br />
+      </p>
+      <p>
+        As a passionate developer, I've embarked on a multifaceted journey that
+        spans web development, user-centered design, and the fascinating world
+        of machine learning.<br /><br />
+      </p>
+      <p>
+        You'll discover an array of projects that showcase my skills, from
+        responsive websites to intelligent applications driven by AI and ML.
+      </p>
+    </div>
+  </div>
+</div>

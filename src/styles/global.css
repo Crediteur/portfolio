@@ -12,13 +12,18 @@
   --outer-padding: 0rem;
   --outer-margin: 2rem;
   --vertical-padding: 2rem;
+  --background-dark: #13151a;
+  --text-color: #f0f0f0;
 }
 
 html {
   font-family: system-ui, sans-serif;
-  background: #13151a;
-  background-size: 224px;
+  background: var(--background-dark);
   scroll-behavior: smooth;
+  margin: 0 auto;
+  padding: 0 var(--outer-padding);
+  width: var(--max-width);
+  max-width: calc(100% - var(--outer-margin));
 }
 
 code {
@@ -34,8 +39,17 @@ code {
 }
 
 body {
-  margin: 0 auto;
-  padding: var(--vertical-padding) var(--outer-padding);
-  width: var(--max-width);
-  max-width: calc(100% - var(--outer-margin));
+  position: relative;
+  padding: 2rem 2rem;
+  z-index: 10;
+}
+
+h1,
+h2,
+h3,
+span {
+  color: aqua;
+}
+p {
+  color: var(--text-color);
 }
