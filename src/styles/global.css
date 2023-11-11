@@ -9,7 +9,6 @@
     white 60%
   );
   --max-width: 1024px;
-  --outer-padding: 0rem;
   --outer-margin: 2rem;
   --vertical-padding: 2rem;
   --background-dark: #13151a;
@@ -18,12 +17,7 @@
 
 html {
   font-family: system-ui, sans-serif;
-  background: var(--background-dark);
   scroll-behavior: smooth;
-  margin: 0 auto;
-  padding: 0 var(--outer-padding);
-  width: var(--max-width);
-  max-width: calc(100% - var(--outer-margin));
 }
 
 code {
@@ -39,9 +33,8 @@ code {
 }
 
 body {
-  position: relative;
-  padding: 2rem 2rem;
-  z-index: 10;
+  background: var(--background-dark);
+  font-size: 16px;
 }
 
 h1,

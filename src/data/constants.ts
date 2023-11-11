@@ -13,7 +13,7 @@ export const projects = [
   {
     name: "Doted",
     desc: "A social media platform for sharing thoughts and ideas.",
-    tags: ["Svelte", "Tailwind", "SQLite"],
+    tags: ["Svelte", "Tailwind", "SQL"],
     url: "https://github.com/Crediteur/Doted-webapp",
     image: PROJ_PATH + "doted_app.png",
   },

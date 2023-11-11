@@ -7,7 +7,7 @@ import Projects from "../components/Projects.astro";
 
 <!-- add lazy loading for images -->
 <Layout>
-  <main>
+  <main class="mx-auto max-w-screen-lg p-8">
     <!-- about section -->
     <div class="py-10">
       <About />
@@ -26,44 +26,9 @@ import Projects from "../components/Projects.astro";
 </Layout>
 
 <style>
-  .projects-grid {
-    display: grid;
-    align-items: center;
-    /* auto create columns with defined minmax values */
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 3rem;
-    text-align: center;
-  }
-</style>
-
-<!-- <style>
-  main {
+  /* main {
     color: white;
     font-size: 20px;
     line-height: 1.6;
-  }
-
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
-  }
-  .instructions {
-    border: 1px solid rgba(var(--accent-light), 25%);
-    background: linear-gradient(
-      rgba(var(--accent-dark), 66%),
-      rgba(var(--accent-dark), 33%)
-    );
-    padding: 1.5rem;
-    border-radius: 8px;
-    height: 100vh;
-  }
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 2rem;
-    padding: 0;
-  }
-</style> -->
+  } */
+</style>

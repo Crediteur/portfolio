@@ -5,29 +5,77 @@ const pathname = Astro.url.pathname;
 console.log(pathname);
 ---
 
-<nav class="py-8">
-  <ul class="text-white flex flex-row gap-10">
-    <li>
-      <a href="/">Home</a>
-    </li>
-    <li class="ml-auto">
-      <a href="/#about">About</a>
-    </li>
-    <li>
-      <a href="/#projects">Projects</a>
-    </li>
-    <li>
-      <a
-        href="/blog"
-        class={pathname === "/blog"
-          ? "text-orange-500 hover:text-orange-500"
-          : ""}>Blog</a
-      >
-    </li>
-  </ul>
+<nav class="">
+  <div class="mx-auto max-w-screen-lg p-8">
+    <ul class="text-white flex flex-row gap-10">
+      <li>
+        <a
+          href="/"
+          class={pathname === "/"
+            ? "text-orange-500 hover:text-orange-500"
+            : ""}>Home</a
+        >
+      </li>
+      <li class="ml-auto">
+        <a href="/#about">About</a>
+      </li>
+      <li>
+        <a href="/#projects">Projects</a>
+      </li>
+      <li>
+        <a
+          href="/blog"
+          class={pathname === "/blog"
+            ? "text-orange-500 hover:text-orange-500"
+            : ""}>Blog</a
+        >
+      </li>
+    </ul>
+  </div>
 </nav>
 
 <style>
-  nav {
+  .glass {
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    background: inherit;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .glass::before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
+    filter: blur(10px);
+    margin: -20px;
+  }
+
+  .glass::after {
+    content: "";
+    background-image: url("/grid.svg");
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    opacity: 0.4;
+  }
+  .purple {
+    border: 1px solid rgba(var(--accent-light), 25%);
+    background: linear-gradient(
+      rgba(var(--accent-dark), 66%),
+      rgba(var(--accent-dark), 33%)
+    );
+    padding: 1.5rem;
+    border-radius: 8px;
   }
 </style>

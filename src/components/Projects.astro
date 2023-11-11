@@ -14,14 +14,14 @@ import { projects } from "../data/constants";
             <p>{project.name}</p>
             <a
               href={project.url}
-              class="flex justify-center max-h-96 sm:max-h-72 bg-black">
+              class="flex justify-center max-h-96 sm:max-h-72 bg-transparent">
               <Image
                 src={project.image}
                 alt={project.desc}
                 width="640"
                 height="360"
                 loading="lazy"
-                class="object-cover object-top aspect-square"
+                class="object-cover object-top aspect-square rounded-md"
               />
             </a>
             <div>

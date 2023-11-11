@@ -2,21 +2,27 @@
 import { links } from "../data/constants";
 ---
 
-<footer class="pt-8">
-  <ul class="flex flex-row justify-center items-center gap-8 py-8">
-    {
-      links.map((link) => (
-        <li>
-          <a href={link.url}>
-            <img src={link.icon} alt={`${link.name} icon`} class="w-10 h-10" />
-          </a>
-        </li>
-      ))
-    }
-  </ul>
-  <p class="text-right text-sm">
-    © {new Date().getFullYear()} Tony Yang
-  </p>
+<footer>
+  <div class="mx-auto max-w-screen-lg">
+    <ul class="flex flex-row justify-center items-center gap-8 py-8">
+      {
+        links.map((link) => (
+          <li>
+            <a href={link.url}>
+              <img
+                src={link.icon}
+                alt={`${link.name} icon`}
+                class="w-10 h-10"
+              />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="text-right text-sm">
+      © {new Date().getFullYear()} Tony Yang
+    </p>
+  </div>
 </footer>
 
 <style>
