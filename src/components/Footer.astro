@@ -2,9 +2,9 @@
 import { links } from "../data/constants";
 ---
 
-<footer>
+<footer class="py-8">
   <div class="mx-auto max-w-screen-lg">
-    <ul class="flex flex-row justify-center items-center gap-8 py-8">
+    <ul class="flex flex-row justify-center items-center gap-10 py-8">
       {
         links.map((link) => (
           <li>
@@ -12,7 +12,7 @@ import { links } from "../data/constants";
               <img
                 src={link.icon}
                 alt={`${link.name} icon`}
-                class="w-10 h-10"
+                class="social-icon w-10 h-10"
               />
             </a>
           </li>
@@ -26,6 +26,11 @@ import { links } from "../data/constants";
 </footer>
 
 <style>
-  footer {
+  .social-icon {
+    filter: invert(0.6);
+    transition: filter 0.2s ease-in-out;
+  }
+  .social-icon:hover {
+    filter: invert(0.8);
   }
 </style>
