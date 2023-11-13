@@ -25,7 +25,7 @@ export const projects = [
     image: PROJ_PATH + "tech_news_app.png",
   },
   {
-    name: "DJ Mixer",
+    name: "Audio Mixer",
     desc: "A desktop app that allows you to mix and play music.",
     tags: ["C++", "JUCE"],
     url: "https://github.com/Crediteur/JUCE_DJPlayer",
