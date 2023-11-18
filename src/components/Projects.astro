@@ -1,12 +1,13 @@
 ---
 import { Image } from "astro:assets";
-
 import { projects } from "../data/constants";
+
+const { heading } = Astro.props;
 ---
 
 <div>
-  <h2 id="projects" class="py-4">Projects</h2>
-  <div>
+  <h2 id="projects" class="py-8 font-medium text-2xl">{heading}</h2>
+  <div class="pt-8">
     <ul class="projects-grid">
       {
         projects.map((project) => (
@@ -50,12 +51,10 @@ import { projects } from "../data/constants";
 
   .project-image {
     filter: contrast(90%) blur(0.5px) hue-rotate(-60deg);
-    mix-blend-mode: screen;
     transition: all 0.4s ease-in-out;
   }
 
-  li:hover .project-image {
+  a:hover > .project-image {
     filter: contrast(100%) blur(0) hue-rotate(0);
-    mix-blend-mode: normal;
   }
 </style>
