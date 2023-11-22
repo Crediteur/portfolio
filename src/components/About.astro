@@ -1,12 +1,18 @@
 ---
-import { Image } from "astro:assets";
+import {Image} from "astro:assets";
 
-const { heading } = Astro.props;
+const {heading} = Astro.props;
 ---
 
 <div>
-  <h2 id="about" class="pb-8 font-medium text-2xl">{heading}</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2">
+  <div class="flex flex-row gap-8 pb-8 items-center">
+    <h2 id="about" class="font-medium text-3xl tracking-wider">
+      {heading}
+    </h2>
+    <hr class="line w-[350px]" />
+  </div>
+
+  <div class="pt-8 grid grid-cols-1 sm:grid-cols-2">
     <div class="self-center place-self-center">
       <Image
         src="/profile_image2.png"

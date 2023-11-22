@@ -38,11 +38,28 @@ body {
 }
 
 h1,
-h2,
 h3,
 span {
   color: aqua;
 }
+
+h2 {
+  color: rgb(215, 215, 215);
+}
 p {
   color: var(--text-color);
+}
+
+.line {
+  height: 1px;
+  color: white;
+  border-width: 0.5px;
+  border-style: solid;
+  border-image: linear-gradient(
+      to right,
+      rgba(125, 125, 125, 0.5),
+      rgba(0, 0, 0, 0)
+    )
+    1 1%;
+  filter: blur(0.5px);
 }

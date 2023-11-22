@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import {Image} from "astro:assets";
 
 const pathname = Astro.url.pathname;
 console.log(pathname);
@@ -7,14 +7,9 @@ console.log(pathname);
 
 <nav class="py-8">
   <div class="mx-auto max-w-screen-lg p-8">
-    <ul class="text-white flex flex-row gap-10">
-      <li>
-        <a
-          href="/"
-          class={pathname === "/"
-            ? "text-orange-500 hover:text-orange-500"
-            : ""}>Home</a
-        >
+    <ul class="text-white flex flex-row gap-10 sm:gap-16">
+      <li class={pathname === "/" ? "hidden" : ""}>
+        <a href="/">Home</a>
       </li>
       <li class="ml-auto">
         <a href="/#about">About</a>

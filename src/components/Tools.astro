@@ -1,13 +1,17 @@
 ---
-import { Image } from "astro:assets";
-import { skills } from "../data/constants";
+import {Image} from "astro:assets";
+import {skills} from "../data/constants";
 
-const { heading } = Astro.props;
+const {heading} = Astro.props;
 ---
 
 <div>
-  <h2 id="skills" class="py-8 font-medium text-2xl">{heading}</h2>
-  <div class="pt-8 flex flex-row justify-around">
+  <div class="flex flex-row gap-8 py-8 items-center">
+    <h2 id="skills" class="font-medium text-3xl tracking-wider">{heading}</h2>
+    <hr class="line w-[350px]" />
+  </div>
+
+  <div class="pt-16 flex flex-row justify-around translate-y-4">
     {
       skills.map((category) => (
         <div class="flex flex-col">
