@@ -6,23 +6,27 @@ const {heading} = Astro.props;
 
 <div>
   <div class="flex flex-row gap-8 pb-8 items-center">
-    <h2 id="about" class="font-medium text-3xl tracking-wider">
-      {heading}
-    </h2>
     <!-- <hr class="line w-[350px]" /> -->
   </div>
 
   <div class="pt-8 grid grid-cols-1 sm:grid-cols-2">
-    <div class="self-center place-self-center">
+    <div class="self-center place-self-center relative">
       <img
         src="/profile_image2.png"
         alt="profile image"
         width="320"
         height="320"
-        class="rounded-full test-shadow"
+        class="rounded-full"
       />
+      <div class="gradient-bg"></div>
     </div>
-    <div class="text-left self-center py-8 sm:w-2/3 sm:ml-8 lg:ml-4">
+    <div
+      class="text-left self-center py-8 sm:w-2/3 sm:ml-8 lg:ml-4 -translate-y-2">
+      <h2
+        id="about"
+        class="font-medium text-3xl tracking-wider pb-8 sm:pb-0 -translate-y-16">
+        {heading}
+      </h2>
       <p>
         I enjoy learning new things and exploring abstract ideas dealing with
         the metaphysical.
@@ -42,44 +46,50 @@ const {heading} = Astro.props;
 </div>
 
 <style>
-  .profile-shadow {
+  /* .profile-shadow {
     filter: drop-shadow(16px 10px rgba(0, 109, 142, 0.316));
-  }
-  img:after {
-    animation: animateBg 10s linear infinite;
+  } */
+  .gradient-bg {
+    animation: animateBg 120s ease infinite;
+    filter: blur(2px) saturate(150%);
     background-image: linear-gradient(
-      0deg,
-      #cf5c5c,
-      #c19b4a,
-      #def2a0,
-      #c6ee4a,
-      #42eca6,
-      #64b3d9,
-      #208ea2,
-      #498ada,
-      #5b73df,
-      #897ed3,
-      #cf5c5c,
-      #c19b4a
+      -65deg,
+      #72fe7d,
+      #fd3a4e,
+      #855afc,
+      #e4c795,
+      #8ca8e8,
+      #eea5ba,
+      #208ea2
     );
-    background-size: 100% 1100%;
+    background-size: 100% 2000%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 9999px;
+    top: -25%;
+    left: -25%;
+    z-index: -5;
     content: "";
   }
   @keyframes animateBg {
     0% {
       background-position: 0% 0%;
     }
-    100% {
+    50% {
       background-position: 0% 100%;
+    }
+    100% {
+      background-position: 0% 0%;
     }
   }
 
-  .test-shadow {
+  /* .test-shadow {
     box-shadow:
       rgba(240, 46, 170, 0.4) 8px 3px,
       rgba(240, 46, 170, 0.3) 16px 6px 1px,
       rgba(240, 46, 170, 0.2) 24px 9px 2px,
       rgba(240, 46, 170, 0.1) 30px 12px 3px,
       rgba(240, 46, 170, 0.05) 36px 15px 4px;
-  }
+  } */
 </style>

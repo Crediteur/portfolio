@@ -1,5 +1,5 @@
 ---
-import {Image} from "astro:assets";
+// import {Image} from "astro:assets";
 import {skills} from "../data/constants";
 
 const {heading} = Astro.props;
@@ -18,7 +18,7 @@ const {heading} = Astro.props;
           <ul class="flex flex-col gap-8">
             {category.items.map((item) => (
               <li class="icon-wrapper">
-                <Image
+                <img
                   src={item.icon}
                   alt={`${item.name} icon`}
                   height="80"
@@ -51,6 +51,6 @@ const {heading} = Astro.props;
 
   .icon-wrapper:hover .icon {
     transform: translate(-4px, -4px);
-    filter: drop-shadow(8px 8px rgba(0, 109, 142, 0.316));
+    filter: drop-shadow(8px 8px 3px rgba(20, 160, 202, 0.316));
   }
 </style>
