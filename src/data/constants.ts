@@ -22,7 +22,7 @@ export const projects = [
     desc: "A news website that presents articles in a modern style.",
     tags: ["HTML", "CSS"],
     url: "https://crediteur.github.io/tech-news-website/",
-    image: PROJ_PATH + "tech_news_app.png",
+    image: PROJ_PATH + "tech_news_app2.png",
   },
   {
     name: "Audio Mixer",
