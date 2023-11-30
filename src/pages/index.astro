@@ -7,12 +7,29 @@ import Projects from "../components/Projects.astro";
 
 <Layout>
   <main class="mx-auto max-w-screen-lg p-8">
-    <div class="py-8">
+    <!-- intro -->
+    <div class="py-36 mb-36 sm:mb-24 flex flex-col">
+      <p class="tracking-widest">Hi, my name is</p>
+      <p
+        class="text-8xl font-semibold tracking-wider -translate-x-[0.2rem] py-6">
+        Tony Yang.
+      </p>
+      <p class="text-3xl tracking-wider py-4">
+        A software engineer based in Toronto🍁
+      </p>
+      <p class="pt-6 w-3/5 tracking-wide">
+        As a passionate developer, I've embarked on a multifaceted journey that
+        spans web development, creative design, and artificial intelligence.
+      </p>
+    </div>
+
+    <!-- todo: sections appear on scroll -->
+    <div class="py-8 mb-8 sm:mb-24">
       <About heading="About" />
     </div>
 
-    <div class="py-8">
-      <Tools heading="Skills" />
+    <div class="py-8 mb-8 sm:mb-24">
+      <Tools heading="Tools" />
     </div>
 
     <div class="py-8">
@@ -21,10 +38,4 @@ import Projects from "../components/Projects.astro";
   </main>
 </Layout>
 
-<style>
-  /* main {
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
-  } */
-</style>
+<style></style>

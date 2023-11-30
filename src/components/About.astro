@@ -1,5 +1,5 @@
 ---
-import {Image} from "astro:assets";
+// import {Image} from "astro:assets";
 
 const {heading} = Astro.props;
 ---
@@ -9,46 +9,77 @@ const {heading} = Astro.props;
     <h2 id="about" class="font-medium text-3xl tracking-wider">
       {heading}
     </h2>
-    <hr class="line w-[350px]" />
+    <!-- <hr class="line w-[350px]" /> -->
   </div>
 
   <div class="pt-8 grid grid-cols-1 sm:grid-cols-2">
     <div class="self-center place-self-center">
-      <Image
+      <img
         src="/profile_image2.png"
         alt="profile image"
         width="320"
         height="320"
-        class="rounded-full sm:pr-8"
+        class="rounded-full test-shadow"
       />
     </div>
-    <div class="text-left self-center py-8">
-      <h1>
-        Hi, I'm <span class="text-gradient">Tony</span>.
-      </h1>
+    <div class="text-left self-center py-8 sm:w-2/3 sm:ml-8 lg:ml-4">
       <p>
-        Welcome to my website, where technology, design, and the magic of
-        machine learning converge.<br /><br />
+        I enjoy learning new things and exploring abstract ideas dealing with
+        the metaphysical.
+        <br /><br />
       </p>
       <p>
-        As a passionate developer, I've embarked on a multifaceted journey that
-        spans web development, user-centered design, and the fascinating world
-        of machine learning.<br /><br />
+        With a foundation in art, I design my work with a proficiency in
+        creative detail.
+        <br /><br />
       </p>
       <p>
-        You'll discover an array of projects that showcase my skills, from
-        responsive websites to intelligent applications driven by AI and ML.
+        On my website, you'll discover an array of projects that showcase my
+        skills, as well as some random writing!
       </p>
     </div>
   </div>
 </div>
 
 <style>
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
+  .profile-shadow {
+    filter: drop-shadow(16px 10px rgba(0, 109, 142, 0.316));
+  }
+  img:after {
+    animation: animateBg 10s linear infinite;
+    background-image: linear-gradient(
+      0deg,
+      #cf5c5c,
+      #c19b4a,
+      #def2a0,
+      #c6ee4a,
+      #42eca6,
+      #64b3d9,
+      #208ea2,
+      #498ada,
+      #5b73df,
+      #897ed3,
+      #cf5c5c,
+      #c19b4a
+    );
+    background-size: 100% 1100%;
+    content: "";
+  }
+  @keyframes animateBg {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 0% 100%;
+    }
+  }
+
+  .test-shadow {
+    box-shadow:
+      rgba(240, 46, 170, 0.4) 8px 3px,
+      rgba(240, 46, 170, 0.3) 16px 6px 1px,
+      rgba(240, 46, 170, 0.2) 24px 9px 2px,
+      rgba(240, 46, 170, 0.1) 30px 12px 3px,
+      rgba(240, 46, 170, 0.05) 36px 15px 4px;
   }
 </style>
