@@ -53,10 +53,17 @@ p {
 .line {
   height: 1px;
   color: white;
-  border-width: 0.5px;
+  border-width: 2px;
   border-style: solid;
+  /* border-image: linear-gradient(
+      to right,
+      rgba(125, 125, 125, 0.5),
+      rgba(0, 0, 0, 0)
+    )
+    1 1%; */
   border-image: linear-gradient(
       to right,
+      hsla(222, 67%, 73%, 1),
       rgba(125, 125, 125, 0.5),
       rgba(0, 0, 0, 0)
     )
