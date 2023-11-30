@@ -19,9 +19,16 @@ import {links} from "../data/constants";
         ))
       }
     </ul>
-    <p class="text-right text-sm translate-y-4">
-      © {new Date().getFullYear()} Tony Yang
-    </p>
+    <div class="flex flex-col justify-end text-right">
+      <p class="text-xs translate-y-4">
+        © {new Date().getFullYear()} Tony Yang
+      </p>
+      <p class="text-[0.5rem] translate-y-5">
+        <a class="hover:underline" href="https://astro.build/"
+          >made with Astro 🚀</a
+        >
+      </p>
+    </div>
   </div>
 </footer>
 
