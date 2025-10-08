@@ -19,7 +19,9 @@ const { heading } = Astro.props;
             <p>{project.name}</p>
             <a
               href={project.url}
-              class="flex justify-center max-h-96 sm:max-h-72 bg-transparent">
+              class="flex justify-center max-h-96 sm:max-h-72 bg-transparent"
+              target="_blank"
+              rel="noopener noreferrer">
               <Image
                 src={project.image}
                 alt={project.desc}
