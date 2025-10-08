@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
 
-const {title} = Astro.props;
+const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -9,16 +9,32 @@ const {title} = Astro.props;
   <head>
     <!-- meta tags -->
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta
+      name="description"
+      content="Astro description"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width"
+    />
+    <meta
+      name="generator"
+      content={Astro.generator}
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon.svg"
+    />
 
     <!-- page strings -->
     <title>{title}</title>
 
     <!-- imports -->
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link
+      rel="stylesheet"
+      href="https://rsms.me/inter/inter.css"
+    />
   </head>
 
 
