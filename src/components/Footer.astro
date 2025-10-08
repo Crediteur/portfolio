@@ -10,7 +10,10 @@ import { links } from "../data/constants";
       {
         links.map((link) => (
           <li>
-            <a href={link.url}>
+            <a
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer">
               <img
                 src={link.icon}
                 alt={`${link.name} icon`}
@@ -28,7 +31,9 @@ import { links } from "../data/constants";
       <p class="text-[0.5rem] translate-y-5">
         <a
           class="hover:underline"
-          href="https://astro.build/">
+          href="https://astro.build/"
+          target="_blank"
+          rel="noopener noreferrer">
           made with Astro 🚀
         </a>
       </p>
